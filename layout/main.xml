@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:gravity="center"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_ing_nombre"
+        android:textSize="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+    <EditText
+        android:hint="@string/h_Name"
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/bSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/b_Ingresar" />
+
+</LinearLayout>
