@@ -1,9 +1,12 @@
- package com.proyecto.mascota;
+package com.proyecto.mascota;
 
 import com.proyecto.mascota.R;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +31,7 @@ public class PantallaDos extends Activity implements OnClickListener {
 	boolean requestToExit = false;
 	/* String que recibe el nombre por medio del bundle */
 	String camb_Nombre;
+	Intent regresa;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +48,8 @@ public class PantallaDos extends Activity implements OnClickListener {
 		// Cambiar nombre
 		nombre.setText(camb_Nombre);
 		AsyncTask();
+		regresa = new Intent(this, MascotaActivity.class);
 	}
-
-
-
 
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -75,6 +77,7 @@ public class PantallaDos extends Activity implements OnClickListener {
 			finish();
 			break;
 		}
+		validaVivo(camb_Nombre);
 	}
 
 	private void toastNotifications() {
@@ -183,10 +186,34 @@ public class PantallaDos extends Activity implements OnClickListener {
 		}.execute();
 	}
 
-	private void validaVivo() {
+	private void validaVivo(String confirmaNombre) {
 		if (mascota.getHambre() == mascota.getTopHambre()
-				|| mascota.getVida() == 0 || mascota.getFelicidad() == 0)
-			
-			finish();
+				|| mascota.getVida() == 0 || mascota.getFelicidad() == 0) {
+			// Create the dialog box
+
+			AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+			// Set the message to display
+			alertbox.setMessage("Su macota " + confirmaNombre
+					+ " ha muerto,desea otra mascota?");
+			// Set a positive/yes button and create a listener
+			alertbox.setPositiveButton("Si",
+					new DialogInterface.OnClickListener() {
+						// Click listener
+						public void onClick(DialogInterface arg0, int arg1) {
+							startActivity(regresa);
+							finish();
+						}
+					});
+			// Set a negative/no button and create a listener
+			alertbox.setNegativeButton("No",
+					new DialogInterface.OnClickListener() {
+						// Click listener
+						public void onClick(DialogInterface arg0, int arg1) {
+							finish();
+						}
+					});
+			// display box
+			alertbox.show();
+		}
 	}
 }
