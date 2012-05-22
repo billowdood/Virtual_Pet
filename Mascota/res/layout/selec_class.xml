@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_selec_mascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Que mascota desea [nombre]"
+        android:textSize="25dp" />
+
+    <RadioGroup
+        android:id="@+id/rg_seleccion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp" >
+
+        <RadioButton
+            android:id="@+id/rb_pikachu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pikachu" />
+
+        <RadioButton
+            android:id="@+id/rb_slowpoke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Slowpoke" />
+
+        <RadioButton
+            android:id="@+id/rb_eevee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eevee" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_selec_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Aceptar" />
+
+</LinearLayout>
