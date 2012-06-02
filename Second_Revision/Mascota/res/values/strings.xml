@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mascota Virtual</string>
+    <string name="tv_ing_nombre">Ingrese nombre de su mascota: </string>
+    <string name="h_Name">Nombre</string>
+    <string name="b_Ingresar">Ingresar</string>
+    <string name="handle">Click</string>
+    <string name="inic_valores">0/0</string>
+    <string name="nombre">Nombre</string>
+    <string name="vida">Vida</string>
+    <string name="hambre">Hambre</string>
+    <string name="felic">Felicidad</string>
+    <string name="nivel">Nivel</string>
+    <string name="exper">Experiencia</string>
+    <string name="sig_nivel">Siguiente Nivel</string>
+    <string name="stamina">Stamina</string>
+
+</resources>
